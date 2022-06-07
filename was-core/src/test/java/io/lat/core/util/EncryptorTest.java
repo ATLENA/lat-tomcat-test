@@ -42,6 +42,7 @@ public class EncryptorTest {
         Encryptor encryptor = new Encryptor();
         String key = "encryptKey";
         String plainText = "plainText";
+        String test = "warning";
 
         String[] arg = new String[] {plainText,key};
         encryptor.main(arg);

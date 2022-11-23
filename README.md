@@ -1,14 +1,14 @@
 
 
-# <img src="docs/images/readme_lena_was_head.png" width="800"> [![Build Web Application Server](https://github.com/OpenLENA/lena-was/actions/workflows/push_build.yml/badge.svg)](https://github.com/OpenLENA/lena-was/actions/workflows/push_build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=OpenLENA_lena-was&metric=alert_status)](https://sonarcloud.io/dashboard?id=OpenLENA_lena-was) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=OpenLENA_lena-was&metric=coverage)](https://sonarcloud.io/dashboard?id=OpenLENA_lena-was)
+# <img src="docs/images/lat_logo.png" width="200"> [![Build Web Application Server](https://github.com/OpenLENA/lena-was/actions/workflows/push_build.yml/badge.svg)](https://github.com/OpenLENA/lena-was/actions/workflows/push_build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=OpenLENA_lena-was&metric=alert_status)](https://sonarcloud.io/dashboard?id=OpenLENA_lena-was) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=OpenLENA_lena-was&metric=coverage)](https://sonarcloud.io/dashboard?id=OpenLENA_lena-was)
 
 
-This is the home of the LENA Web Application Server.
-LENA provides everything required for creating and configuring Web Application Server so easily.
+This is the home of the LA:T Web Application Server.
+LA:T provides everything required for creating and configuring Web Application Server so easily.
 
 All feature following will be working with CLI.
 
-The feature of LENA Open Edition : 
+The feature of LA:T Open Edition : 
 
 + Core Engine : encrypt datasource password and servlet filter to disable secure attribute of session cookie when set-cookie.
 
@@ -27,7 +27,7 @@ The feature of LENA Open Edition :
 You can get [installation guide](https://github.com/OpenLENA/lena-was/wiki/Installation-Guide) and getting started.
 
 ## Getting Help
-If you are having some trouble with LENA? Contact us the way you want.
+If you are having some trouble with LA:T? Contact us the way you want.
 + Check the [reference documentation](https://github.com/OpenLENA/lena-was/wiki).
 + Notify us the problem by using [GitHub's Issue](https://github.com/OpenLENA/lena-was/issues/new).
 + Feel free to join our [community](https://groups.google.com/g/lena-oe) and ask that to us.
@@ -40,28 +40,28 @@ We use GitHub's integrated issue tracking system to record bugs and other issues
 + If possible, try to create a test-case.
 
 ## Modules
-There are several modules in LENA Open Edition:
+There are several modules in LA:T Open Edition:
 
 [**was-core**](https://github.com/OpenLENA/lena-was/tree/master/was-core)
 
-It is engine core module of LENA.
+It is engine core module of LA:T.
 
 [**was-oss**](https://github.com/OpenLENA/lena-was/tree/master/was-oss)
 
-It has packages including OSS for using LENA.
+It has packages including OSS for using LA:T.
 
 [**was-dist**](https://github.com/OpenLENA/lena-was/tree/master/was-dist)
 
-Packaging module for installation files of LENA
+Packaging module for installation files of LA:T
 
 ## Release
-LENA will be released every each quarter. You can get [released files](https://github.com/OpenLENA/lena-was/releases) and check what is changed in [release note](https://github.com/OpenLENA/lena-was/wiki).
+LA:T will be released every each quarter. You can get [released files](https://github.com/OpenLENA/lena-was/releases) and check what is changed in [release note](https://github.com/OpenLENA/lena-was/wiki).
 
 ## Roadmap
-You can find a roadmap of LENA [here](https://github.com/OpenLENA/lena-was/wiki/2021-Roadmap).
+You can find a roadmap of LA:T [here](https://github.com/OpenLENA/lena-was/wiki/2021-Roadmap).
 
 ## Community
-[LENA Community](https://groups.google.com/g/openlena)
+[LA:T Community](https://groups.google.com/g/openlena)
 
 ## License
-LENA Web Application Server Opensource Edition is Open Source software released under the Apache 2.0 license.
+LA:T Web Application Server Opensource Edition is Open Source software released under the Apache 2.0 license.

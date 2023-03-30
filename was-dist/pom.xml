@@ -22,7 +22,6 @@
         </lat-all-work.finalName>
         <lat-all-work.outputDir>${lat-all-work.workDir}/${lat-all-work.finalName}</lat-all-work.outputDir>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>io.atlena</groupId>

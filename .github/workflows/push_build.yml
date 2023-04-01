@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      # setup settings.xml of maven
+      # setup settings.xml of maven`
       - name: maven-settings-xml-action
         uses: whelk-io/maven-settings-xml-action@v14
         with:
@@ -57,16 +57,16 @@ jobs:
       - name: Set current date as env variable
         run: echo "datetime=$(date +'%y%m%d%H%M%S')" >> $GITHUB_ENV
       # build docker container image and push to repository
-      - name: Build and push amazonlinux2
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./was-containerization/Dockerfile
-          push: true
-          build-args: |
-            FROM_IMAGE=amazonlinux:2
-          tags: |
-            ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_amazonlinux2
+     # - name: Build and push amazonlinux2
+     #   uses: docker/build-push-action@v2
+     #   with:
+     #     context: .
+     #     file: ./was-containerization/Dockerfile
+     #     push: true
+     #     build-args: |
+     #       FROM_IMAGE=amazonlinux:2
+     #     tags: |
+     #       ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_amazonlinux2
       - name: Build and push centos7
         uses: docker/build-push-action@v2
         with:

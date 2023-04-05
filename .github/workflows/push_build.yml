@@ -69,8 +69,6 @@ jobs:
      # - name: Push test another repository in github
      #   run : |
       - name: push to another repository (cpina)
-        run:
-
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{secrets.API_TOKEN_GITHUB}}

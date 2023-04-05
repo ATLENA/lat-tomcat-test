@@ -61,25 +61,37 @@ jobs:
         run: |
           touch pushFile.sh
           ls -al
-          pwd:q
+          pwd
           git config user.email
           git config user.name
+          git show --oneline -s
       # test repository
      # - name: Push test another repository in github
      #   run : |
       - name: push to another repository (cpina)
+        run:
+
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB:${{secrets:  ${{ secrets.GH_MVN_REPO_USER_INFO}}
+          API_TOKEN_GITHUB: ${{secrets.API_TOKEN_GITHUB}}
         with:
-          source_file: 'pushFile.sh'
-          destination_repo: 'ATLENA/runtime_push_test'
-          #destination_folder: 'test-dir' # optional
-          user_email: 'tykim0123@lgcns.com'# your email
-          user_name: 'YoungK'           # your login
-          commit_message: 'push test another repository'
+          source-directory: './pushFile.sh'
+          destination-github-username: 'ATLENA'
+          destination-repository-name: 'runtime_push_test'
+          #destination_folder: 'test-dir'  # optional
+          user-email: tykim0123@lgcns.com # your email
+          user-name: 'YoungK'              # your login
+          commit-message: 'push test another repository'
           target-branch: main
-
+      # test git show
+      - name: Create Test file
+        run: |
+          touch pushFile.sh
+          ls -al
+          pwd
+          git config user.email
+          git config user.name
+          git show --oneline -s
 
       # build docker container image and push to repository
      # - name: Build and push amazonlinux2

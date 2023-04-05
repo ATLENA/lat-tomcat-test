@@ -70,7 +70,7 @@ jobs:
       - name: push to another repository (cpina)
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB:${{secrets:  ${{ secrets.GH_MVN_REPO_USER_INFO}}
+          API_TOKEN_GITHUB: ${{secrets.GH_MVN_REPO_USER_INFO}}
         with:
           source_file: 'pushFile.sh'
           destination_repo: 'ATLENA/runtime_push_test'

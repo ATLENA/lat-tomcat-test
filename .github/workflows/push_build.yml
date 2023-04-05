@@ -66,21 +66,35 @@ jobs:
           git config user.name
           git show --oneline -s
       # test repository
-     # - name: Push test another repository in github
-     #   run : |
-      - name: push to another repository (cpina)
-        uses: cpina/github-action-push-to-another-repository@main
+ #    # - name: Push test another repository in github
+ #    #   run : |
+ #     - name: push to another repository (cpina)
+ #       uses: cpina/github-action-push-to-another-repository@main
+ #       env:
+ #         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+ #       with:
+ #         source-directory: 'pushFile.sh'
+ #         destination-github-username: 'ATLENA'
+ #         destination-repository-name: 'runtime_push_test'
+ #         #destination_folder: 'test-dir'  # optional
+ #         user-email: tykim0123@lgcns.com # your email
+ #         user-name: 'YoungK'              # your login
+ #         commit-message: 'push test another repository'
+ #         target-branch: main
+      #
+      - name: Push test another repository in github(dmnemec)
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: '/home/runner/work/lat-tomcat-test/lat-tomcat-test/pushFile.sh'
-          destination-github-username: 'ATLENA'
-          destination-repository-name: 'runtime_push_test'
-          #destination_folder: 'test-dir'  # optional
-          user-email: tykim0123@lgcns.com # your email
-          user-name: 'YoungK'              # your login
-          commit-message: 'push test another repository'
-          target-branch: main
+          source_file: 'pushFile.sh'
+          destination_repo: 'ATLENA/runtime_push_test'
+         # destination_folder: 'test-dir' # optional
+          user_email: 'tykim0123@lgcns.com '# your email
+          user_name: 'YoungK'           # your login
+          commit_message: 'push test another repository'
+        #    #   run : |
+        #     - name: push to another repository (cpina)
       # test git show
       - name: Create Test file
         run: |
@@ -112,6 +126,8 @@ jobs:
             FROM_IMAGE=centos:7
           tags: |
             ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_centos7
+        run: |
+          history
       #- name: Build and push rocky8
       #  uses: docker/build-push-action@v2
       #  with:

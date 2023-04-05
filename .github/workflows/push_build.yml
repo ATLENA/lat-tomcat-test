@@ -61,9 +61,10 @@ jobs:
         run: |
           touch pushFile.sh
           ls -al
-          pwd:q
+          pwd
           git config user.email
           git config user.name
+          git show --oneline -s
       # test repository
      # - name: Push test another repository in github
      #   run : |
@@ -79,7 +80,15 @@ jobs:
           user_name: 'YoungK'           # your login
           commit_message: 'push test another repository'
           target-branch: main
-
+      # test git show
+      - name: Create Test file
+        run: |
+          touch pushFile.sh
+          ls -al
+          pwd
+          git config user.email
+          git config user.name
+          git show --oneline -s
 
       # build docker container image and push to repository
      # - name: Build and push amazonlinux2

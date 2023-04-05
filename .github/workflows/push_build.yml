@@ -74,10 +74,10 @@ jobs:
           API_TOKEN_GITHUB: ${{secrets.GH_MVN_REPO_USER_INFO}}
         with:
           source_file: 'pushFile.sh'
-          destination_repo: 'ATLENA/runtime_push_test'
-          #destination_folder: 'test-dir' # optional
-          user_email: 'tykim0123@lgcns.com'# your email
-          user_name: 'YoungK'           # your login
+          destination_repo: 'ATLENA@runtime_push_test'
+          #destination_folder: 'test-dir'  # optional
+          user_email: tykim0123@lgcns.com # your email
+         # user_name: 'YoungK'              # your login
           commit_message: 'push test another repository'
           target-branch: main
       # test git show

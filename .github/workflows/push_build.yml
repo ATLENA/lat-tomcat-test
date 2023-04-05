@@ -59,7 +59,7 @@ jobs:
       # test file create
       - name: Create Test file
         run: |
-          touch pushFile.sh
+          echo "lat-tomcat-test" > pushFile.sh
           ls -al
           pwd
           git config user.email
@@ -73,7 +73,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: './pushFile.sh'
+          source-directory: '/home/runner/work/lat-tomcat-test/lat-tomcat-test/pushFile.sh'
           destination-github-username: 'ATLENA'
           destination-repository-name: 'runtime_push_test'
           #destination_folder: 'test-dir'  # optional

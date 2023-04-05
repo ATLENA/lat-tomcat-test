@@ -98,12 +98,13 @@ jobs:
       # test git show
       - name: Create Test file
         run: |
-          touch pushFile.sh
+          history
           ls -al
           pwd
           git config user.email
           git config user.name
           git show --oneline -s
+          
 
       # build docker container image and push to repository
      # - name: Build and push amazonlinux2
@@ -126,8 +127,7 @@ jobs:
             FROM_IMAGE=centos:7
           tags: |
             ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_centos7
-        run: |
-          history
+
       #- name: Build and push rocky8
       #  uses: docker/build-push-action@v2
       #  with:

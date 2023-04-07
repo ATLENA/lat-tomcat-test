@@ -60,7 +60,9 @@ jobs:
       - name: Create Test file
         run: |
           echo "lat-tomcat-test" > pushFile.sh
-          ls -al
+          ls -al 
+          ls -al was-dist
+          tree ./ -d -L 4
           pwd
           git config user.email
           git config user.name
@@ -87,7 +89,8 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'pushFile.sh'
+         # source_file: 'pushFile.sh'
+          source_file: was-dist/target/lat-work/
           destination_repo: 'ATLENA/runtime_push_test'
          # destination_folder: 'test-dir' # optional
           user_email: 'tykim0123@lgcns.com '# your email
@@ -117,16 +120,16 @@ jobs:
      #       FROM_IMAGE=amazonlinux:2
      #     tags: |
      #       ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_amazonlinux2
-      - name: Build and push centos7
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./was-containerization/Dockerfile
-          push: true
-          build-args: |
-            FROM_IMAGE=centos:7
-          tags: |
-            ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_centos7
+    # - name: Build and push centos7
+    #   uses: docker/build-push-action@v2
+    #   with:
+    #     context: .
+    #     file: ./was-containerization/Dockerfile
+    #     push: true
+    #     build-args: |
+    #       FROM_IMAGE=centos:7
+    #     tags: |
+    #       ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_centos7
 
       #- name: Build and push rocky8
       #  uses: docker/build-push-action@v2
@@ -148,10 +151,10 @@ jobs:
       #      FROM_IMAGE=ubuntu:18.04
       #    tags: |
       #      ghcr.io/${{ steps.repository.outputs.lowercase }}:${{ steps.get-version.outputs.version }}_ubuntu1804
-    outputs:
-      repository: ${{ steps.repository.outputs.lowercase }}
-      version: ${{ steps.get-version.outputs.version }}
-      datetime: ${{ env.datetime }}
+   # outputs:
+   #   repository: ${{ steps.repository.outputs.lowercase }}
+   #   version: ${{ steps.get-version.outputs.version }}
+   #   datetime: ${{ env.datetime }}
   # test was for each os
 #  amazonlinux2:
 #   name: "[test] amazonlinux2"

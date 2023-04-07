@@ -70,12 +70,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>atlena</name>
-            <url>https://maven.pkg.github.com/atlena/lat-ctl</url>
-        </repository>
-    </distributionManagement>
 </project>

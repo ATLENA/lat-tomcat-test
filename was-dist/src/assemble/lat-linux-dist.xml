@@ -34,6 +34,7 @@
     </dependencySets>
 
     <fileSets>
+        <!-- default directory start  >
         <fileSet>
             <directory>../was-dist/outline</directory>
             <includes>
@@ -48,6 +49,8 @@
             <fileMode>755</fileMode>
             <outputDirectory>..</outputDirectory>
         </fileSet>
+        < default directory end  -->
+        <!-- engine start  -->
         <fileSet>
             <directory>../was-oss/tomcat/${tomcat.major.version}/${tomcat.version}</directory>
             <includes>
@@ -58,8 +61,11 @@
                 <exclude>**/*.bat</exclude>
             </excludes>
             <fileMode>755</fileMode>
-            <outputDirectory>./depot/tomcat/${project.version}/module</outputDirectory>
+            <!--outputDirectory>./depot/tomcat/${project.version}/module</outputDirectory-->
+            <outputDirectory>./</outputDirectory>
         </fileSet>
+        <!-- engine end  -->
+        <!-- engine template start>
         <fileSet>
             <directory>../was-oss/tomcat/${tomcat.major.version}</directory>
             <includes>
@@ -85,7 +91,8 @@
             <fileMode>755</fileMode>
             <outputDirectory>depot/tomcat/${project.version}/template/base/bin</outputDirectory>
         </fileSet>
-        <!-- maven으로 올려야함 -->
+        < engine template end-->
+        <!-- maven으로 올려야함 / 용도????>
         <fileSet>
             <directory>../was-core/target</directory>
             <includes>
@@ -98,8 +105,10 @@
             <fileMode>755</fileMode>
             <outputDirectory>depot/tomcat/${project.version}/module/lib</outputDirectory>
         </fileSet>
+        -->
     </fileSets>
 
+    <!-- ctl - install-info  -->
     <files>
         <file>
             <source>../was-dist/outline/etc/info/release-info.xml</source>

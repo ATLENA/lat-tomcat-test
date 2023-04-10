@@ -90,9 +90,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
          # source_file: 'pushFile.sh'
-          source_file: was-dist/target/lat-work/tomcat*
+          source_file: was-dist/target/lat-work/
           destination_repo: 'ATLENA/runtime_push_test'
-         # destination_folder: 'test-dir' # optional
+          destination_folder: './' # optional
           user_email: 'tykim0123@lgcns.com '# your email
           user_name: 'YoungK'           # your login
           commit_message: 'push test another repository'

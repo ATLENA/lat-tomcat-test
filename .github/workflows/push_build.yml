@@ -62,7 +62,7 @@ jobs:
           echo "lat-tomcat-test" > pushFile.sh
           ls -al 
           ls -al was-dist
-          tree ./ -L 5
+          tree ./ -d -L 5
           pwd
           ls -al was-dist/target/lat-work/tomcat*      
           git config user.email

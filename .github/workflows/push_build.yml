@@ -64,6 +64,10 @@ jobs:
           ls -al was-dist
           tree ./ -L 5
           pwd
+          ls -al was-dist/target/lat-work/tomcat*
+          ls -al /tmp
+          cp -R 'was-dist/target/lat-work/tomcat*' /tmp
+          ls -al /tmp
           git config user.email
           git config user.name
           git show --oneline -s

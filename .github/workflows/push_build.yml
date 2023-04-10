@@ -84,7 +84,7 @@ jobs:
  #         commit-message: 'push test another repository'
  #         target-branch: main
       #
-      - name: Push test another repository in github(dmnemec)
+      - name: Push test another repository in github engn(dmnemec)
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
@@ -98,6 +98,18 @@ jobs:
           commit_message: 'push test another repository'
         #    #   run : |
         #     - name: push to another repository (cpina)
+      - name: Push test another repository in github template(dmnemec)
+          uses: dmnemec/copy_file_to_another_repo_action@main
+          env:
+            API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          with:
+            # source_file: 'pushFile.sh'
+            source_file: was-dist/target/template-base/
+            destination_repo: 'ATLENA/runtime_push_test'
+            destination_folder: '/template' # optional
+            user_email: 'tykim0123@lgcns.com '# your email
+            user_name: 'YoungK'           # your login
+            commit_message: 'push test another repository base-template'
       # test git show
       - name: Create Test file
         run: |

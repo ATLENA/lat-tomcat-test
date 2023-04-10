@@ -14,6 +14,7 @@
     <name>was-dist</name>
     <url>http://maven.apache.org</url>
     <properties>
+        <!--engn properties-->
         <build.timestamp>${maven.build.timestamp}</build.timestamp>
         <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format><!-- yyyyMMdd-HHmm -->
         <lat-all-work.workDir>${project.build.directory}/lat-work</lat-all-work.workDir>
@@ -21,6 +22,10 @@
         <lat-all-work.finalName>tomcat-${lat-all-work.editionName}-${project.version}-linux
         </lat-all-work.finalName>
         <lat-all-work.outputDir>${lat-all-work.workDir}/${lat-all-work.finalName}</lat-all-work.outputDir>
+        <!-- template proverties -->
+        <lat-template-base.workDir>${project.build.directory}/template-base</lat-template-base.workDir>
+        <lat-template-base.finalName>base-tomcat-${project.version}</lat-template-base.finalName>
+        <lat-template-base.outputDir>${lat-template-base.workDir}/${lat-template-base.finalName}</lat-template-base.outputDir>
     </properties>
     <dependencies>
         <dependency>
@@ -64,6 +69,22 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <outputDirectory>${lat-all-work.workDir}</outputDirectory>
                             <finalName>${lat-all-work.finalName}</finalName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>lat-template-base</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/assemble/lat-linux-dist_base.xml</descriptor>
+                            </descriptors>
+                            <tarLongFileMode>gnu</tarLongFileMode>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <outputDirectory>${lat-template-base.workDir}</outputDirectory>
+                            <finalName>${lat-template-base.finalName}</finalName>
                         </configuration>
                     </execution>
                 </executions>

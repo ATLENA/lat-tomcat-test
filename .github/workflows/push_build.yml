@@ -64,13 +64,11 @@ jobs:
           ls -al was-dist
           tree ./ -L 5
           pwd
-          ls -al was-dist/target/lat-work/tomcat*
-          ls -al /tmp
-          cp -R 'was-dist/target/lat-work/tomcat*' /tmp
-          ls -al /tmp
+          ls -al was-dist/target/lat-work/tomcat*      
           git config user.email
           git config user.name
           git show --oneline -s
+          ::set-output name=engn_name::
       # test repository
  #    # - name: Push test another repository in github
  #    #   run : |
@@ -94,9 +92,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
          # source_file: 'pushFile.sh'
-          source_file: was-dist/target/lat-work/tomcat*
+          source_file: was-dist/target/lat-work/
           destination_repo: 'ATLENA/runtime_push_test'
-         # destination_folder: 'test-dir' # optional
+          destination_folder: './' # optional
           user_email: 'tykim0123@lgcns.com '# your email
           user_name: 'YoungK'           # your login
           commit_message: 'push test another repository'
